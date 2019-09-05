@@ -18,10 +18,12 @@ fi
 ## https://stackoverflow.com/questions/42438619/run-chromium-inside-container-libgl-error
 case $OS in
   "Linux")
-    socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" &
+    ## https://wiki.ros.org/docker/Tutorials/GUI
+    xhost +local:root
     sudo docker run --rm -it --net host --device=/dev/dri:/dev/dri \
       -e QT_X11_NO_MITSHM=1 -e GAZEBO_IP=127.0.0.1 -e DISPLAY=$DISPLAY \
-      realteckky/ginko_ros_docker ;;
+      realteckky/ginko_ros_docker
+    xhost -local:root;;
   "MacOS")
     IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
     #defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
