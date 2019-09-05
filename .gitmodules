@@ -1,0 +1,8 @@
+[submodule "ginko_ros"]
+	path = ginko_ros
+	url = https://gitlab.com/nyxrobotics/ginko_ros
+	branch = delevop
+[submodule "gazebo_ros_pkgs"]
+	path = gazebo_ros_pkgs
+	url = https://github.com/nyxrobotics/gazebo_ros_pkgs
+	branch = feature/ginko_gazebo_controller
