@@ -5,10 +5,13 @@ Ginko is one of the best hobby robot which is under 5kg and 50cm to join ROBO-ON
 ![Ginko ROS](http://www.robo-one.com/upload/robots/1021_ec4b7f6388ebf85fe4a52b86987444c1original.png)
 
 ## How to use
+If you have linux and installed Docker, you can run it by one-liner.\
+``sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/realteck-ky/ginko_ros_docker/master/docker_run.sh)"``
+
 ### Linux
 You can run demo scripts using following commands.
 
-``` sh
+``` bash
 git clone https://github.com/realteck-ky/ginko_ros_docker.git
 cd ginko_ros_docker
 sudo docker_run.sh
@@ -16,6 +19,14 @@ sudo docker_run.sh
 
 ## Future work
 ### MacOSX
+At MacOSX and docker toolbox, you don't have to add ``sudo``.
+
+``` bash
+git clone https://github.com/realteck-ky/ginko_ros_docker.git
+cd ginko_ros_docker
+docker_run.sh
+```
+
 XQuartz has an OpenGL problem in Xwindow over SSH.
 When you try to execute, you could get following messages.
 
