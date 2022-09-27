@@ -2,3 +2,7 @@
 	path = gazebo_ros_pkgs
 	url = https://github.com/nyxrobotics/gazebo_ros_pkgs
 	branch = feature/ginko_gazebo_controller
+[submodule "ginko_ros"]
+	path = ginko_ros
+	url = https://github.com/nyxrobotics/ginko_ros
+	branch = feature/gazebo_dc_motor
