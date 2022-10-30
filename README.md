@@ -17,6 +17,14 @@ cd ginko_ros_docker
 sudo docker_run.sh
 ```
 
+If you want to get sdf and urdf files, please enter following commands.
+
+```bash
+bash docker_gen_sdf.sh
+```
+
+Then, those files are generated to `ginko_ros_docker/generate`.
+
 ## Future work
 ### MacOSX
 At MacOSX and docker toolbox, you don't have to add ``sudo``.
@@ -28,13 +36,15 @@ docker_run.sh
 ```
 
 XQuartz has an OpenGL problem in Xwindow over SSH.
-When you try to execute, you could get following messages.
+When you execute it, you may get following messages.
 
 ```
 libGL error: No matching fbConfigs or visuals found
 libGL error: failed to load driver: swrast
 ```
-Same errors are reported there.
+
+Same errors are reported.
+
 * https://github.com/jessfraz/dockerfiles/issues/253
 * https://bbs.archlinux.org/viewtopic.php?id=244575
 

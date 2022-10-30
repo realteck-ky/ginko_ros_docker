@@ -5,4 +5,4 @@
 [submodule "ginko_ros"]
 	path = ginko_ros
 	url = https://github.com/nyxrobotics/ginko_ros
-	branch = feature/gazebo_dc_motor
+	branch = feature/gazebo_xm540
