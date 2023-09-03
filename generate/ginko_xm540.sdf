@@ -1,0 +1,3404 @@
+<sdf version='1.6'>
+  <model name='ginko'>
+    <link name='root_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.0305 0 -0 0</pose>
+        <mass>0.382</mass>
+        <inertia>
+          <ixx>0.000305926</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000479609</iyy>
+          <iyz>0</iyz>
+          <izz>0.000275549</izz>
+        </inertia>
+      </inertial>
+      <collision name='root_link_fixed_joint_lump__waist_link01_collision'>
+        <pose frame=''>0 0 0.0305 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.084 0.04 0.0895</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='root_link_fixed_joint_lump__waist_link01_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/waist_link01.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <link name='chest_link01'>
+      <pose frame=''>0 0 0.0975 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.012 0 -0 0</pose>
+        <mass>0.665</mass>
+        <inertia>
+          <ixx>0.00239455</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000826207</iyy>
+          <iyz>0</iyz>
+          <izz>0.00290943</izz>
+        </inertia>
+      </inertial>
+      <collision name='chest_link01_collision'>
+        <pose frame=''>0 0 0.012 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.11 0.201 0.053</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <collision name='chest_link01_collision_1'>
+        <pose frame=''>0.048 0 0.044 0 0.749156 0</pose>
+        <geometry>
+          <box>
+            <size>0.074 0.062 0.072</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='chest_link01_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/chest_link01.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='chest_joint01' type='revolute'>
+      <child>chest_link01</child>
+      <parent>root_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_l_link01'>
+      <pose frame=''>0 0.087 0.0975 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.03475 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_l_link01_collision'>
+        <pose frame=''>0 0.03475 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.052 0.05 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_l_link01_visual'>
+        <pose frame=''>0 0.04 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_l_link01.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_l_joint01' type='revolute'>
+      <child>arm_l_link01</child>
+      <parent>chest_link01</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_l_link02'>
+      <pose frame=''>0 0.127 0.0975 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.006625 0.04275 -0.01775 0 -0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.000511292</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000234458</iyy>
+          <iyz>0</iyz>
+          <izz>0.000468025</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_l_link02_collision'>
+        <pose frame=''>-0.006625 0.04275 -0.01775 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05725 0.113 0.069</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_l_link02_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_l_link02.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_l_joint02' type='revolute'>
+      <child>arm_l_link02</child>
+      <parent>arm_l_link01</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_l_link03'>
+      <pose frame=''>0 0.16025 0.0595 3.14159 1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <mass>0.122</mass>
+        <inertia>
+          <ixx>1.44773e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000650921</iyy>
+          <iyz>0</iyz>
+          <izz>0.000644577</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_l_link03_collision'>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.251 0.02 0.032</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_l_link03_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_r_link03.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_l_joint03' type='revolute'>
+      <child>arm_l_link03</child>
+      <parent>arm_l_link02</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_l_link04'>
+      <pose frame=''>0 0.16025 0.0595 3.14159 1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <mass>0.122</mass>
+        <inertia>
+          <ixx>1.44773e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000650921</iyy>
+          <iyz>0</iyz>
+          <izz>0.000644577</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_l_link04_collision'>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.251 0.02 0.032</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_l_link04_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_r_link04.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_l_joint04' type='revolute'>
+      <child>arm_l_link04</child>
+      <parent>arm_l_link02</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_r_link01'>
+      <pose frame=''>0 -0.087 0.0975 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0.03475 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_r_link01_collision'>
+        <pose frame=''>0 -0.03475 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.052 0.05 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_r_link01_visual'>
+        <pose frame=''>0 -0.04 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_r_link01.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_r_joint01' type='revolute'>
+      <child>arm_r_link01</child>
+      <parent>chest_link01</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_r_link02'>
+      <pose frame=''>0 -0.127 0.0975 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.006625 -0.04275 -0.01775 0 -0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.000511292</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000234458</iyy>
+          <iyz>0</iyz>
+          <izz>0.000468025</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_r_link02_collision'>
+        <pose frame=''>-0.006625 -0.04275 -0.01775 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05725 0.113 0.069</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_r_link02_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_r_link02.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_r_joint02' type='revolute'>
+      <child>arm_r_link02</child>
+      <parent>arm_r_link01</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_r_link03'>
+      <pose frame=''>0 -0.16025 0.0595 3.14159 1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <mass>0.122</mass>
+        <inertia>
+          <ixx>1.44773e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000650921</iyy>
+          <iyz>0</iyz>
+          <izz>0.000644577</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_r_link03_collision'>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.251 0.02 0.032</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_r_link03_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_r_link03.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_r_joint03' type='revolute'>
+      <child>arm_r_link03</child>
+      <parent>arm_r_link02</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_r_link04'>
+      <pose frame=''>0 -0.16025 0.0595 3.14159 1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <mass>0.122</mass>
+        <inertia>
+          <ixx>1.44773e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000650921</iyy>
+          <iyz>0</iyz>
+          <izz>0.000644577</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_r_link04_collision'>
+        <pose frame=''>0.11 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.251 0.02 0.032</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='arm_r_link04_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/arm_r_link04.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='arm_r_joint04' type='revolute'>
+      <child>arm_r_link04</child>
+      <parent>arm_r_link02</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link01'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.015 0 0 -0 0</pose>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.06771e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.40104e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link01_collision'>
+        <pose frame=''>0 0.015 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.095 0.05 0.03</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link01_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_l_link01.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint01' type='revolute'>
+      <child>leg_l_link01</child>
+      <parent>root_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link02'>
+      <pose frame=''>0 0.06085 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.02 -0.0037 0 -0 0</pose>
+        <mass>0.48</mass>
+        <inertia>
+          <ixx>0.00059816</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00041672</iyy>
+          <iyz>0</iyz>
+          <izz>0.00054056</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link02_collision'>
+        <pose frame=''>0 0.02 -0.0037 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.067 0.095 0.077</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link02_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_l_link02.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint02' type='revolute'>
+      <child>leg_l_link02</child>
+      <parent>leg_l_link01</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link03'>
+      <pose frame=''>0.016713 0.06085 -0.027522 0 0.785398 0</pose>
+      <inertial>
+        <pose frame=''>0.046 0 0 0 -0 0</pose>
+        <mass>0.028</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.87815e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.07935e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link03_collision'>
+        <pose frame=''>0.046 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.108655 0.0373 0.023</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link03_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link03.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint03' type='revolute'>
+      <child>leg_l_link03</child>
+      <parent>leg_l_link02</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.4</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link07'>
+      <pose frame=''>0.087424 0.06085 -0.098233 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.01 0 0 0 -0 0</pose>
+        <mass>0.009</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link07_collision'>
+        <pose frame=''>-0.01 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0605 0.0487 0.014</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link07_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link07.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint07' type='revolute'>
+      <child>leg_l_link07</child>
+      <parent>leg_l_link03</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link05'>
+      <pose frame=''>0.053924 0.06085 -0.098233 0 0.785398 0</pose>
+      <inertial>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.71483e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.8258e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link05_collision'>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0309 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link05_visual'>
+        <pose frame=''>-0.1 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link05.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint05' type='revolute'>
+      <child>leg_l_link05</child>
+      <parent>leg_l_link07</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.4</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link08'>
+      <pose frame=''>0.087424 0.06085 -0.098233 0 -0.785398 0</pose>
+      <inertial>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <mass>0.021</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.80359e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.90855e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link08_collision'>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0301 0.0175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link08_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link08.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint08' type='revolute'>
+      <child>leg_l_link08</child>
+      <parent>leg_l_link07</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link10'>
+      <pose frame=''>0.016713 0.06085 -0.168943 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.03335 0.0087 -0.016 0 -0 0</pose>
+        <mass>0.108</mass>
+        <inertia>
+          <ixx>4.44205e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.76356e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.39681e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link10_collision'>
+        <pose frame=''>-0.03335 0.0087 -0.016 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0873 0.0531 0.046</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link10_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_l_link10.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint10' type='revolute'>
+      <child>leg_l_link10</child>
+      <parent>leg_l_link08</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.4</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link09'>
+      <pose frame=''>-0.016787 0.06085 -0.168943 0 -0.785398 0</pose>
+      <inertial>
+        <pose frame=''>0.05 0 0 0 -0 0</pose>
+        <mass>0.022</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.88948e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.93631e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link09_collision'>
+        <pose frame=''>0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0237 0.0175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link09_visual'>
+        <pose frame=''>0.1 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link09.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint09' type='revolute'>
+      <child>leg_l_link09</child>
+      <parent>leg_l_link10</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>1.4</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link06'>
+      <pose frame=''>0.027648 0.06085 -0.112714 0 0.785398 0</pose>
+      <inertial>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.28612e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.29095e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link06_collision'>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0181 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link06_visual'>
+        <pose frame=''>-0.1 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link06.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint06' type='revolute'>
+      <child>leg_l_link06</child>
+      <parent>leg_l_link09</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link11'>
+      <pose frame=''>-3.7e-05 0.06085 -0.193693 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.00835 -0.015 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>5.83768e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.86002e-05</iyy>
+          <iyz>0</iyz>
+          <izz>6.30943e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link11_collision'>
+        <pose frame=''>0 0.00835 -0.015 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0485 0.0567 0.044</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link11_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_l_link11.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint11' type='revolute'>
+      <child>leg_l_link11</child>
+      <parent>leg_l_link10</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link12_1'>
+      <pose frame=''>-3.7e-05 0.06085 -0.256193 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.00965 0 -0 0</pose>
+        <mass>0.0316</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link12_1_collision'>
+        <pose frame=''>0 0 0.00965 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.038 0.038 0.0272</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link12_1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link12_1.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint12' type='revolute'>
+      <child>leg_l_link12_1</child>
+      <parent>leg_l_link11</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link12_2'>
+      <pose frame=''>-3.7e-05 0.06085 -0.256193 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.00025 0 -0 0</pose>
+        <mass>0.0486</mass>
+        <inertia>
+          <ixx>2.51141e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.06528e-05</iyy>
+          <iyz>0</iyz>
+          <izz>8.11012e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link12_2_collision'>
+        <pose frame=''>0 0 -0.00025 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 0.075 0.024</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link12_2_visual'>
+        <pose frame=''>0 0 -0.01225 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link12_2.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_ft_sensor_joint' type='fixed'>
+      <child>leg_l_link12_2</child>
+      <parent>leg_l_link12_1</parent>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_l_link04'>
+      <pose frame=''>-0.016713 0.06085 -0.027522 0 -0.510166 0</pose>
+      <inertial>
+        <pose frame=''>-0.015 0 0 0 -0 0</pose>
+        <mass>0.011</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_l_link04_collision'>
+        <pose frame=''>-0.015 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04565 0.0373 0.023</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_l_link04_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link04.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_l_joint04' type='revolute'>
+      <child>leg_l_link04</child>
+      <parent>leg_l_link02</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>1.4</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link01'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0.015 0 0 -0 0</pose>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.06771e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.40104e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link01_collision'>
+        <pose frame=''>0 -0.015 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.095 0.05 0.03</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link01_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link01.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint01' type='revolute'>
+      <child>leg_r_link01</child>
+      <parent>root_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link02'>
+      <pose frame=''>0 -0.06085 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0.02 -0.0037 0 -0 0</pose>
+        <mass>0.48</mass>
+        <inertia>
+          <ixx>0.00059816</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00041672</iyy>
+          <iyz>0</iyz>
+          <izz>0.00054056</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link02_collision'>
+        <pose frame=''>0 -0.02 -0.0037 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.067 0.095 0.077</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link02_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link02.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint02' type='revolute'>
+      <child>leg_r_link02</child>
+      <parent>leg_r_link01</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link03'>
+      <pose frame=''>0.016713 -0.06085 -0.027522 0 0.785398 0</pose>
+      <inertial>
+        <pose frame=''>0.046 0 0 0 -0 0</pose>
+        <mass>0.028</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.87815e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.07935e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link03_collision'>
+        <pose frame=''>0.046 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.108655 0.0373 0.023</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link03_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link03.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint03' type='revolute'>
+      <child>leg_r_link03</child>
+      <parent>leg_r_link02</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>1.4</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link07'>
+      <pose frame=''>0.087424 -0.06085 -0.098233 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.01 0 0 0 -0 0</pose>
+        <mass>0.009</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link07_collision'>
+        <pose frame=''>-0.01 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0605 0.0487 0.014</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link07_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link07.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint07' type='revolute'>
+      <child>leg_r_link07</child>
+      <parent>leg_r_link03</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link05'>
+      <pose frame=''>0.053924 -0.06085 -0.098233 0 0.785398 0</pose>
+      <inertial>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.71483e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.8258e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link05_collision'>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0309 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link05_visual'>
+        <pose frame=''>-0.1 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link05.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint05' type='revolute'>
+      <child>leg_r_link05</child>
+      <parent>leg_r_link07</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>1.4</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link08'>
+      <pose frame=''>0.087424 -0.06085 -0.098233 0 -0.785398 0</pose>
+      <inertial>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <mass>0.021</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.80359e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.90855e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link08_collision'>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0301 0.0175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link08_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link08.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint08' type='revolute'>
+      <child>leg_r_link08</child>
+      <parent>leg_r_link07</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link10'>
+      <pose frame=''>0.016713 -0.06085 -0.168943 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.03335 -0.0087 -0.016 0 -0 0</pose>
+        <mass>0.108</mass>
+        <inertia>
+          <ixx>4.44205e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.76356e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.39681e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link10_collision'>
+        <pose frame=''>-0.03335 -0.0087 -0.016 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0873 0.0531 0.046</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link10_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link10.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint10' type='revolute'>
+      <child>leg_r_link10</child>
+      <parent>leg_r_link08</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>1.4</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link09'>
+      <pose frame=''>-0.016787 -0.06085 -0.168943 0 -0.785398 0</pose>
+      <inertial>
+        <pose frame=''>0.05 0 0 0 -0 0</pose>
+        <mass>0.022</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.88948e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.93631e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link09_collision'>
+        <pose frame=''>0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0237 0.0175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link09_visual'>
+        <pose frame=''>0.1 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link09.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint09' type='revolute'>
+      <child>leg_r_link09</child>
+      <parent>leg_r_link10</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.4</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link06'>
+      <pose frame=''>0.027648 -0.06085 -0.112714 0 0.785398 0</pose>
+      <inertial>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.28612e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.29095e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link06_collision'>
+        <pose frame=''>-0.05 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.0181 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link06_visual'>
+        <pose frame=''>-0.1 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link06.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint06' type='revolute'>
+      <child>leg_r_link06</child>
+      <parent>leg_r_link09</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1.5</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link11'>
+      <pose frame=''>-3.7e-05 -0.06085 -0.193693 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0.00835 -0.015 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>5.83768e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.86002e-05</iyy>
+          <iyz>0</iyz>
+          <izz>6.30943e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link11_collision'>
+        <pose frame=''>0 -0.00835 -0.015 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0485 0.0567 0.044</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link11_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link11.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint11' type='revolute'>
+      <child>leg_r_link11</child>
+      <parent>leg_r_link10</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link12_1'>
+      <pose frame=''>-3.7e-05 -0.06085 -0.256193 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.00965 0 -0 0</pose>
+        <mass>0.0316</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link12_1_collision'>
+        <pose frame=''>0 0 0.00965 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.038 0.038 0.0272</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link12_1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link12_1.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint12' type='revolute'>
+      <child>leg_r_link12_1</child>
+      <parent>leg_r_link11</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link12_2'>
+      <pose frame=''>-3.7e-05 -0.06085 -0.256193 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.00025 0 -0 0</pose>
+        <mass>0.0486</mass>
+        <inertia>
+          <ixx>2.51141e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.06528e-05</iyy>
+          <iyz>0</iyz>
+          <izz>8.11012e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link12_2_collision'>
+        <pose frame=''>0 0 -0.00025 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 0.075 0.024</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link12_2_visual'>
+        <pose frame=''>0 0 -0.01225 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link12_2.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_ft_sensor_joint' type='fixed'>
+      <child>leg_r_link12_2</child>
+      <parent>leg_r_link12_1</parent>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <link name='leg_r_link04'>
+      <pose frame=''>-0.016713 -0.06085 -0.027522 0 -0.510166 0</pose>
+      <inertial>
+        <pose frame=''>-0.015 0 0 0 -0 0</pose>
+        <mass>0.011</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_r_link04_collision'>
+        <pose frame=''>-0.015 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04565 0.0373 0.023</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>10</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>6</max_contacts>
+      </collision>
+      <visual name='leg_r_link04_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ginko_description/meshes/ginko_xm540/obj/leg_r_link04.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='leg_r_joint04' type='revolute'>
+      <child>leg_r_link04</child>
+      <parent>leg_r_link02</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.4</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='leg_r_loop_joint01' type='revolute'>
+      <parent>leg_r_link02</parent>
+      <child>leg_r_link05</child>
+      <pose frame=''>-0.1 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>0</cfm_damping>
+          <limit>
+            <cfm>1e-07</cfm>
+            <erp>0.8</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='leg_r_loop_joint02' type='revolute'>
+      <parent>leg_r_link07</parent>
+      <child>leg_r_link09</child>
+      <pose frame=''>0.1 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>0</cfm_damping>
+          <limit>
+            <cfm>1e-07</cfm>
+            <erp>0.8</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='leg_r_loop_joint03' type='revolute'>
+      <parent>leg_r_link04</parent>
+      <child>leg_r_link06</child>
+      <pose frame=''>-0.1 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>0</cfm_damping>
+          <limit>
+            <cfm>1e-07</cfm>
+            <erp>0.8</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='leg_l_loop_joint01' type='revolute'>
+      <parent>leg_l_link02</parent>
+      <child>leg_l_link05</child>
+      <pose frame=''>-0.1 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>0</cfm_damping>
+          <limit>
+            <cfm>1e-07</cfm>
+            <erp>0.8</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='leg_l_loop_joint02' type='revolute'>
+      <parent>leg_l_link07</parent>
+      <child>leg_l_link09</child>
+      <pose frame=''>0.1 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>0</cfm_damping>
+          <limit>
+            <cfm>1e-07</cfm>
+            <erp>0.8</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='leg_l_loop_joint03' type='revolute'>
+      <parent>leg_l_link04</parent>
+      <child>leg_l_link06</child>
+      <pose frame=''>-0.1 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.1</lower>
+          <upper>3.1</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>0</cfm_damping>
+          <limit>
+            <cfm>1e-07</cfm>
+            <erp>0.8</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_dc_motor.so'>
+      <robotNamespace>ginko</robotNamespace>
+      <robotSimType>gazebo_dc_motor/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>false</legacyModeNS>
+    </plugin>
+  </model>
+</sdf>

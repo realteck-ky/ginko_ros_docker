@@ -1,22 +1,23 @@
 #!/bin/bash
+set -ex
+
 cd /catkin_ws
 source /opt/ros/kinetic/setup.bash
 source devel/setup.bash
 
-## Install conda
-wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh
-bash Miniconda3-py38_4.12.0-Linux-x86_64.sh -b -p /catkin_ws/miniconda3
-rm Miniconda3-py38_4.12.0-Linux-x86_64.sh
-echo ". /catkin_ws/miniconda3/etc/profile.d/conda.sh" >> ~/.bashrc
-echo "conda activate base" >> ~/.bashrc
-
-source ~/.bashrc
-/catkin_ws/miniconda3/bin/conda install -c conda-forge sdformat13-python -yq
-/catkin_ws/miniconda3/bin/pip install sdformat-mjcf
-
 ## Make urdf and sdf from xacro
-rosrun xacro xacro --inorder -o /generate/ginko.urdf /catkin_ws/src/ginko_description/gazebo/xacro/ginko.xacro
-gz sdf -p /generate/ginko.urdf > /generate/ginko.sdf
+rosrun xacro xacro --inorder -o /generate/ginko_rs406.urdf /catkin_ws/src/ginko_ros/ginko_description/xacro/ginko_rs406/ginko.xacro
+gz sdf -p /generate/ginko_rs406.urdf > /generate/ginko_rs406.sdf
+
+rosrun xacro xacro --inorder -o /generate/ginko_xm540.urdf /catkin_ws/src/ginko_ros/ginko_description/xacro/ginko_xm540/ginko.xacro
+gz sdf -p /generate/ginko_xm540.urdf > /generate/ginko_xm540.sdf
+
+rosrun xacro xacro --inorder -o /generate/kuroko.urdf /catkin_ws/src/kuroko_ros/kuroko_description/xacro/kuroko/kuroko.xacro
+gz sdf -p /generate/kuroko.urdf > /generate/kuroko.sdf
 
 # TODO: Generate mujoco's xml
-sdf2mjcf /generate/ginko.sdf /generate/ginko.xml
+export PATH=/opt/miniconda3/bin:$PATH
+activate base
+sdf2mjcf /generate/ginko_rs406.sdf /generate/ginko_rs406.xml
+sdf2mjcf /generate/ginko_xm540.sdf /generate/ginko_xm540.xml
+sdf2mjcf /generate/kuroko.sdf /generate/kuroko.xml

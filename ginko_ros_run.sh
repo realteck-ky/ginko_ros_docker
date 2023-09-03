@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 ## Set enviroment variables
 cd /catkin_ws
