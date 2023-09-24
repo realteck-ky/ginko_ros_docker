@@ -15,7 +15,9 @@ You can run demo scripts using following commands.
 ``` bash
 git clone https://github.com/realteck-ky/ginko_ros_docker.git
 cd ginko_ros_docker
-sudo docker_run.sh
+sudo docker_run.sh # Download from docker hub
+# OR
+sudo docker_run.sh --self-build # Build container
 ```
 
 ## Future work
@@ -25,7 +27,9 @@ At MacOSX and docker toolbox, you don't have to add ``sudo``.
 ``` bash
 git clone https://github.com/realteck-ky/ginko_ros_docker.git
 cd ginko_ros_docker
-docker_run.sh
+sudo docker_run.sh # Download from docker hub
+# OR
+sudo docker_run.sh --self-build # Build container
 ```
 
 XQuartz has an OpenGL problem in Xwindow over SSH.
