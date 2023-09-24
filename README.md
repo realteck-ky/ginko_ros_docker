@@ -1,8 +1,9 @@
 ## Outline
-This is docker demo scripts for [Ginko ROS](http://www.robo-one.com/rankings/view/1021).\
-Ginko is one of the best hobby robot which is under 5kg and 50cm to join ROBO-ONE Auto.
+This is docker demo scripts for [Kuroko](https://www.robo-one.com/rankings/view/1553) and [Kuroko ROS](https://github.com/nyxrobotics/kuroko_ros).
+Kuroko is one of the best hobby robot which is under 5kg and 50cm to join ROBO-ONE Auto.
 
-![Ginko ROS](http://www.robo-one.com/upload/robots/1021_ec4b7f6388ebf85fe4a52b86987444c1original.png)
+!
+![Kuroko ROS](https://www.robo-one.com/upload/robots/1553_9bad62fea5fd78b0ed3690191ae0c604original.png?1693759872)
 
 ## How to use
 If you have linux and installed Docker, you can run it by one-liner.\
@@ -16,14 +17,6 @@ git clone https://github.com/realteck-ky/ginko_ros_docker.git
 cd ginko_ros_docker
 sudo docker_run.sh
 ```
-
-If you want to get sdf and urdf files, please enter following commands.
-
-```bash
-bash docker_gen_sdf.sh
-```
-
-Then, those files are generated to `ginko_ros_docker/generate`.
 
 ## Future work
 ### MacOSX

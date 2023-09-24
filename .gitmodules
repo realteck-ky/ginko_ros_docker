@@ -1,14 +1,6 @@
-[submodule "gazebo_ros_pkgs"]
-	path = gazebo_ros_pkgs
-	url = https://github.com/nyxrobotics/gazebo_ros_pkgs
-	branch = feature/ginko_gazebo_controller
-[submodule "ginko_ros"]
-	path = ginko_ros
-	url = https://github.com/nyxrobotics/ginko_ros
-	branch = feature/gazebo_xm540
 [submodule "kuroko_ros"]
 	path = kuroko_ros
 	url = https://github.com/nyxrobotics/kuroko_ros
-[submodule "decision_making"]
-	path = decision_making
-	url = https://github.com/cogniteam/decision_making.git
+[submodule "gazebo_dc_motor"]
+	path = gazebo_dc_motor
+	url = https://github.com/nyxrobotics/gazebo_dc_motor

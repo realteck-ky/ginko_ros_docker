@@ -1,5 +1,0 @@
-<launch>
-    <include file="$(find ginko_joint_controller_gazebo)/launch/ginko_joint_controller.launch"/>
-    <include file="$(find ginko_motion_player)/launch/fsm_ginko.launch"/>
-    <include file="$(find ginko_description)/launch/roboone_large.launch"/>
-</launch>
